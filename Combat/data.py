@@ -29,3 +29,12 @@ class DataModel:
     def update(self, query: dict, character: dict):
         db = self._connect()
         db.replace_one(query, character, upsert=True)
+
+
+if __name__ == '__main__':
+    db = DataModel()
+    db.push({
+        'Name': 'Gaston',
+        'Level': 1,
+        'Class': 'Brute',
+    })
