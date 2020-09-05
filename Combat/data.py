@@ -34,7 +34,8 @@ class DataModel:
 if __name__ == '__main__':
     db = DataModel()
     db.push({
-        'Name': 'Gaston',
-        'Level': 1,
-        'Class': 'Brute',
+        'Name': 'Capt. Morgause',
+        'Health': 40,
+        'Weapon': 'Dagger',
+        'Player': 'Broken',
     })

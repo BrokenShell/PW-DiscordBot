@@ -19,4 +19,5 @@ async def clear(ctx, amount=999):
     await ctx.channel.purge(limit=amount+1)
 
 
+bot.load_extension('cogs.character_ops')
 bot.run(os.getenv('TOKEN'))
