@@ -1,4 +1,5 @@
 from discord.ext import commands
+from Combat.cogs.combat_ops import combat
 from Combat.pirates import Pirate
 from Combat.data import DataModel
 
@@ -21,11 +22,14 @@ class Character(commands.Cog):
     async def test_author(self, ctx):
         await ctx.send(ctx.author)
 
+    @commands.command()
+    async def duel(self, ctx, *, target: str):
+        player = self.db.load({'Player': str(ctx.author)})
+        opponent = self.db.load({'Name': target})
+        result = combat(player, opponent)
+        await ctx.send(result)
+
 
 def setup(bot):
     bot.add_cog(Character(bot))
     print('[•] Character Cog Loaded')
-
-
-if __name__ == '__main__':
-    pass

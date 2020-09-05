@@ -11,9 +11,6 @@ class Weapon:
     def __init__(self):
         self.name = self.weapons()
 
-    def damage(self):
-        return rng.dice(1, 10)
-
     def __str__(self):
         return self.name
 
